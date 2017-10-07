@@ -27,11 +27,12 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String name = inputField.getText().toString();
+                        String subTotal = inputField.getText().toString();
 
-                        Toast.makeText(MainActivity.this, name, Toast.LENGTH_LONG).show();
-                        result.setText(Float.valueOf(name) * 1.15 + ""); // tipping 15%
-                        tipAmount.setText(Float.valueOf(name) * 0.15 + "");
+                        // Toast.makeText(MainActivity.this, subTotal, Toast.LENGTH_LONG).show();
+
+                        result.setText(Float.valueOf(subTotal) * 1.15 + ""); // tipping 15%
+                        tipAmount.setText(Float.valueOf(subTotal) * 0.15 + "");
                     }
                 }
         );
