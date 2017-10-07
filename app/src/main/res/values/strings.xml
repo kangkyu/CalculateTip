@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Calculate Tip</string>
+    <string name="submit_price_button">Calculate it!</string>
 </resources>
