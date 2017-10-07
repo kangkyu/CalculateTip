@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final TextView result = (TextView) findViewById(R.id.resultText);
+        final TextView tipAmount = (TextView) findViewById(R.id.tipAmountText);
 
         inputField = (EditText) findViewById(R.id.inputNumber);
         submitButton = (Button) findViewById(R.id.button);
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Toast.makeText(MainActivity.this, name, Toast.LENGTH_LONG).show();
                         result.setText(Float.valueOf(name) * 1.15 + ""); // tipping 15%
+                        tipAmount.setText(Float.valueOf(name) * 0.15 + "");
                     }
                 }
         );
