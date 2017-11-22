@@ -6,7 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
     private EditText inputField;
@@ -30,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
                         String subTotal = inputField.getText().toString();
 
                         // Toast.makeText(MainActivity.this, subTotal, Toast.LENGTH_LONG).show();
+                        double percentage = 0.15;  // tipping 15%
 
-                        result.setText(Float.valueOf(subTotal) * 1.15 + ""); // tipping 15%
-                        tipAmount.setText(Float.valueOf(subTotal) * 0.15 + "");
+                        result.setText(NumberFormat.getCurrencyInstance().format(Float.valueOf(subTotal) * (1 + percentage)));
+                        tipAmount.setText(NumberFormat.getCurrencyInstance().format(Float.valueOf(subTotal) * percentage));
                     }
                 }
         );
