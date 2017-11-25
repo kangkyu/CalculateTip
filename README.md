@@ -8,4 +8,5 @@ TODO:
 + ~~add menu bar to select percentage options (15%, 18%, 20%, &c)~~
 + better layout and colors (button, background, text)
 + ~~issue: empty string input crashes~~
++ add test
 + use BigDecimal for big bills (?)
