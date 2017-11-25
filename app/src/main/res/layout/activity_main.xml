@@ -1,46 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="100dp"
+    android:paddingRight="100dp"
     tools:context="com.kangkyu.calculatetip.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tipAmountText"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_minus"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="decrement"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/percentage_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="15%"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/button_plus"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="increment"
+            android:text="+"/>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/resultText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button"
         android:layout_centerHorizontal="true"
-
+        android:gravity="right"
         android:padding="8dp"
-        android:textSize="24sp" />
+        android:textSize="24sp"/>
 
     <TextView
         android:id="@+id/tipAmountText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/resultText"
         android:layout_centerHorizontal="true"
-
+        android:gravity="right"
         android:padding="8dp"
-        android:textSize="24sp" />
+        android:textSize="24sp"/>
 
     <EditText
         android:id="@+id/inputNumber"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
         android:ems="10"
-        android:inputType="numberDecimal" />
+        android:gravity="center"
+        android:inputType="numberDecimal"/>
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/submit_price_button"
-        android:padding="16dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true"
+        android:padding="16dp"
+        android:text="@string/submit_price_button"/>
 
 </RelativeLayout>
