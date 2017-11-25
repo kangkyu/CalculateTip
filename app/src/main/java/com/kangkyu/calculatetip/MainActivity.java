@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
                             result.setText(NumberFormat.getCurrencyInstance().format(subTotal * (1 + percentage)));
                             tipAmount.setText(NumberFormat.getCurrencyInstance().format(subTotal * percentage));
                         } else {
+                            result.setText("");
+                            tipAmount.setText("");
                             Toast.makeText(MainActivity.this, "Not calculated with empty field", Toast.LENGTH_SHORT).show();
                         }
                     }

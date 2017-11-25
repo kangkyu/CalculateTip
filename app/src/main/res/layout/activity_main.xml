@@ -49,7 +49,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="right"
         android:padding="8dp"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        tools:text="$115"/>
 
     <TextView
         android:id="@+id/tipAmountText"
@@ -59,7 +60,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="right"
         android:padding="8dp"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        tools:text="$15"/>
 
     <EditText
         android:id="@+id/inputNumber"
@@ -68,8 +70,10 @@
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:gravity="center"
-        android:inputType="numberDecimal"/>
+        tools:text="100"
+        android:gravity="right"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"/>
 
     <Button
         android:id="@+id/button"
