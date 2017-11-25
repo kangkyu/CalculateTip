@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -29,13 +30,17 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String subTotal = inputField.getText().toString();
+                        String subTotalString = inputField.getText().toString();
 
-                        // Toast.makeText(MainActivity.this, subTotal, Toast.LENGTH_LONG).show();
-                        double percentage = mPercentage * 1.0 / 100;
+                        if (!subTotalString.matches("")) {
+                            float subTotal = Float.valueOf(subTotalString);
+                            double percentage = mPercentage * 1.0 / 100;
 
-                        result.setText(NumberFormat.getCurrencyInstance().format(Float.valueOf(subTotal) * (1 + percentage)));
-                        tipAmount.setText(NumberFormat.getCurrencyInstance().format(Float.valueOf(subTotal) * percentage));
+                            result.setText(NumberFormat.getCurrencyInstance().format(subTotal * (1 + percentage)));
+                            tipAmount.setText(NumberFormat.getCurrencyInstance().format(subTotal * percentage));
+                        } else {
+                            Toast.makeText(MainActivity.this, "Not calculated with empty field", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
         );
